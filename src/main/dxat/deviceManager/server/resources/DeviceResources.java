@@ -9,6 +9,7 @@ import javax.ws.rs.PathParam;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
+import dxat.deviceManager.server.DeviceManagerImpl;
 import dxat.deviceManager.server.entities.DeviceEntity;
 
 public class DeviceResources {
@@ -22,10 +23,18 @@ public class DeviceResources {
 	@Consumes("application/json")
 	public JSONObject getDevice(@PathParam("deviceName") String deviceName)
 			throws JSONException {
-		DeviceEntity device = new DeviceEntity(deviceName, "ip", "description");
+		DeviceEntity device;
+		try {
+			device = DeviceManagerImpl.getInstance().getDevice(deviceName);
+		} catch (Exception e) {
+			return new JSONObject();
+		}
+		
 		return new JSONObject().put("name", device.getName())
 				.put("ipAddress", device.getIp())
 				.put("description", device.getDescription());
 	}
 
+	
+	
 }
