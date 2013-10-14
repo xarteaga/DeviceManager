@@ -45,6 +45,11 @@
 			<artifactId>jersey-container-simple-http</artifactId>
 			<version>2.3.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jettison</groupId>
+			<artifactId>jettison</artifactId>
+			<version>1.0.1</version>
+		</dependency>
 	</dependencies>
 	<reporting>
 		<plugins>
