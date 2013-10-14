@@ -12,9 +12,9 @@ import org.codehaus.jettison.json.JSONObject;
 import dxat.deviceManager.server.DeviceManagerImpl;
 import dxat.deviceManager.server.entities.DeviceEntity;
 
-public class DeviceResources {
+public class DeviceResource {
 
-	public DeviceResources() {
+	public DeviceResource() {
 
 	}
 
