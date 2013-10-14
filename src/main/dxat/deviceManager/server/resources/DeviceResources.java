@@ -13,19 +13,19 @@ import dxat.deviceManager.server.entities.DeviceEntity;
 
 public class DeviceResources {
 
-	public DeviceResources () {
-		
+	public DeviceResources() {
+
 	}
-	
-    @GET
-    @Path("{deviceName}/")
-    @Consumes("application/json")
-    public JSONObject getDevice (@PathParam("deviceName") String deviceName) throws JSONException {
-    	DeviceEntity device = new DeviceEntity(deviceName, "ip", "description");
-		return new JSONObject().
-                put("name", device.getName()).
-                put("ipAddress", device.getIp()).
-                put("description", device.getDescription());
-    }
-	
+
+	@GET
+	@Path("{deviceName}/")
+	@Consumes("application/json")
+	public JSONObject getDevice(@PathParam("deviceName") String deviceName)
+			throws JSONException {
+		DeviceEntity device = new DeviceEntity(deviceName, "ip", "description");
+		return new JSONObject().put("name", device.getName())
+				.put("ipAddress", device.getIp())
+				.put("description", device.getDescription());
+	}
+
 }
