@@ -31,5 +31,15 @@ public class DeviceManagerImpl implements DeviceManager {
 	public void putDevice(String id, String ip, String desc) {
 		this.devices.put(id, new DeviceEntity(id, ip, desc));
 	}
+	
+	public void deleteDevice(String id) throws Exception {
+		this.devices.remove(id);
+	}
+	
+	public void editDevice(String id, String ip, String description){
+		DeviceEntity dev = this.devices.get(id);
+		dev.setIp(ip);
+		dev.setDescription(description);		
+	}
 
 }

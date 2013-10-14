@@ -1,6 +1,7 @@
 package dxat.deviceManager.client.test;
 
 import dxat.deviceManager.server.DeviceManagerImpl;
+import dxat.deviceManager.server.entities.DeviceEntity;
 
 public class TestDM {
 
@@ -13,9 +14,9 @@ public class TestDM {
 		impl.putDevice("alpha.dxat.net", "10.0.0.2", "switch");
 		impl.putDevice("gamma.dxat.net", "10.0.0.3", "virtualMachine");
 	try{
-		Device dev1 = impl.getDevice("alpha.dxat.net");
-		Device dev2 = impl.getDevice("gamma.dxat.net");
-		Device dev3 = impl.getDevice("beta.dxat.net");
+		DeviceEntity dev1 = impl.getDevice("alpha.dxat.net");
+		DeviceEntity dev2 = impl.getDevice("gamma.dxat.net");
+		DeviceEntity dev3 = impl.getDevice("beta.dxat.net");
 		
 		System.out.println(dev1.getDescription());
 		System.out.println(dev2.getDescription());
